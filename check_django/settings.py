@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'cloudinary',
-    'dj_tasks'
+    'dj_tasks',
+    'task_notes',
 ]
 
 SITE_ID = 1

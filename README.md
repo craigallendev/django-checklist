@@ -45,10 +45,8 @@ Balsamiq was used to create the wireframes with the base layout showing the init
 Agile methodologies were used to plan and prioritise tasks according to MoSCoW and to aid with the assigning of tasks.
 
 
-[Project Board](https://github.com/users/craigallendev/projects/5/views/1)
-
 ## Kanban Board Overview
-As per [enter link description here](needs%20link)
+[Project Board](https://github.com/users/craigallendev/projects/5/views/1)
 Tasks that had a relationship were linked to heighten task tracking visualisation.
 
 - **No Status:** This section contained all the tasks prior to being assigned to the workflow.
