@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1>Checklist Templates</h1>
+    <ul>
+        {% for checklist_template in checklist_templates %}
+            <li>{{ checklist_template.name }}</li>
+        {% empty %}
+            <li>No checklist templates available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
