@@ -17,7 +17,7 @@ class TemplateStepAdmin(admin.ModelAdmin):
 class UserChecklistAdmin(admin.ModelAdmin):
     list_display = ('user', 'template', 'created_at', 'completed', 'completed_at')
     search_fields = ('user__username', 'template__name')
-    list_filter = ('user, template, created_at', 'completed', 'completed_at')
+    list_filter = ('user', 'template', 'created_at', 'completed_at')
 
 @admin.register(UserChecklistStep)
 class UserChecklistStepAdmin(admin.ModelAdmin):
