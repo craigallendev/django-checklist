@@ -1,7 +1,7 @@
-from . import views
 from django.urls import path
+from .views import ChecklistTemplateListView, HomePage
 
 urlpatterns = [
-    path('',
-    views.HomePage.as_view(), name="home")
+    path('', HomePage.as_view(), name="home"),
+    path('checklist-templates/', ChecklistTemplateListView.as_view(), name="checklist_template_list"),
 ]
