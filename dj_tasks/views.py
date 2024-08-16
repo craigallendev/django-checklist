@@ -19,4 +19,16 @@ class ChecklistTemplateListView(LoginRequiredMixin, ListView):
     model = ChecklistTemplate
     template_name = 'checklist_template_list.html'
     context_object_name = 'checklist_templates'
+    
+class ChecklistTemplateDetailView(LoginRequiredMixin, DetailView):
+    """
+    Displays a single checklist template
+    """
+    model = ChecklistTemplate
+    template_name = 'checklist_template_detail.html'
+    context_object_name = 'checklist_template'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['steps'] = TemplateStep.objects.filter(template=self.object)
+        return context
