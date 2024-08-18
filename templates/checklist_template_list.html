@@ -8,7 +8,7 @@
         {% for checklist_template in checklist_templates %}
             <li>
                 {{ checklist_template.name }}
-                <a href="{% url 'checklist_template_detail' checklist_template.pk %}" class="btn btn-primary">View Details</a>
+                <a href="{% url 'dj_tasks:checklist_template_detail' checklist_template.pk %}" class="btn btn-primary">View Details</a>
             </li>
         {% empty %}
             <li>No checklist templates available.</li>
