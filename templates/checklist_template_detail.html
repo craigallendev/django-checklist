@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1>{{ checklist_template.name }}</h1>
+        <p>{{ checklist_template.description }}</p>
+        <h2>Steps</h2>
+        <ul>
+            {% for step in steps %}
+                <li>
+                    <h5>{{ step.step_int }}</h5>
+                    <p>{{ step.description }}</p>
+                    <p>{{step.code}}
+                </li>
+                {% empty %}
+                <li>No steps available.</li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
