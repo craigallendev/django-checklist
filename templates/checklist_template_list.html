@@ -1,21 +1,36 @@
-{% extends 'base.html' %}
-
-{% load static %}
-
+{% extends 'base.html' %} 
+{% load static %} 
 {% block content %}
-    <h1>Checklist Templates</h1>
-    <div class="container">
-        <div class="row">
-            {% for checklist_template in checklist_templates %}
-                <div class="col-12 col-md-6 col-lg-4 mb-4">  <!-- 3 columns per row on medium and larger screens -->
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ checklist_template.name }}</h5>  <!-- Title above button -->
-                            <a href="{% url 'dj_tasks:checklist_template_detail' checklist_template.pk %}" class="btn btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+
+<!-- Container for centering content and adding vertical spacing -->
+<div class="container text-center my-5">
+  
+    <!-- Main heading for the page -->
+    <h1 class="mb-4">Checklist Templates</h1>
+    
+    <!-- Row to hold the checklist template cards, centered horizontally -->
+    <div class="row justify-content-center">
+      
+      <!-- Loop through each checklist template -->
+      {% for checklist_template in checklist_templates %}
+      
+      <!-- Column for each checklist template card; responsive layout -->
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <!-- Card component for displaying each checklist template -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <!-- Card title displaying the name of the checklist template -->
+            <h5 class="card-title">{{ checklist_template.name }}</h5>
+            
+            <!-- Button to view details of the checklist template, with margin-top -->
+            <a
+              href="{% url 'dj_tasks:checklist_template_detail' checklist_template.pk %}"
+              class="btn btn-primary mt-3"
+            >View Details</a>
+          </div>
         </div>
-    </div>
+      </div>
+      {% endfor %}
+      </div>
+</div>
 {% endblock %}
