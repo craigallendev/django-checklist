@@ -1,9 +1,22 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-{% load static %}
-
-{% block content %}
-    <h1>Hello Django From Heroku</h1>
-
-    <p><a href="{% url 'dj_tasks:checklist_template_list' %}">View Checklist Templates</a></p>
+<div class="container mt-5">
+    <!-- Centered content using Bootstrap classes -->
+    <div class="text-center">
+        <!-- Main Heading -->
+        <h1 class="display-4 mb-4">Welcome to Django To-Do</h1>
+        
+        <!-- Description with margin -->
+        <p class="lead mb-4">
+            This application provides a set of checklist templates to assist you in
+            setting up Django and deploying your project to Heroku. Use the templates to
+            track your progress and ensure all setup steps are completed efficiently.
+        </p>
+        
+        <!-- Subheading with link -->
+        <h2>
+            <a class="btn btn-primary btn-lg" href="{% url 'dj_tasks:checklist_template_list' %}">View Checklist Templates</a>
+        </h2>
+    </div>
+</div>
 {% endblock %}
