@@ -4,14 +4,18 @@
 
 {% block content %}
     <h1>Checklist Templates</h1>
-    <ul>
-        {% for checklist_template in checklist_templates %}
-            <li>
-                {{ checklist_template.name }}
-                <a href="{% url 'dj_tasks:checklist_template_detail' checklist_template.pk %}" class="btn btn-primary">View Details</a>
-            </li>
-        {% empty %}
-            <li>No checklist templates available.</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="row">
+            {% for checklist_template in checklist_templates %}
+                <div class="col-12 col-md-6 col-lg-4 mb-4">  <!-- 3 columns per row on medium and larger screens -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ checklist_template.name }}</h5>  <!-- Title above button -->
+                            <a href="{% url 'dj_tasks:checklist_template_detail' checklist_template.pk %}" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
