@@ -1,0 +1,107 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}Django To Do{% endblock head_title %}</title>
+
+    <!-- Bootswatch CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_head %}
+    {% endblock extra_head %}
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUserStatus" aria-labelledby="offcanvasUserStatus">
+        <div class="offcanvas-header">
+            {% if user.is_authenticated %}
+                <h5 id="offcanvasUserStatusLabel">You are logged in as {{ user }}</h5>
+            {% else %}
+                <h5 id="offcanvasUserStatusLabel">You are not logged in.</h5>
+            {% endif %}
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            {% else %}
+                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid justify-content-between">
+            <div id="logo">
+                <a class="navbar-brand" href="{% url 'dj_tasks:home' %}">Django To Do</a>
+            </div>
+            <div id="user-status">
+                {% if user.is_authenticated %}
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUserStatus"
+                        aria-controls="offcanvasUserStatus">Logged in as {{ user }}</a>
+                {% else %}
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUserStatus"
+                        aria-controls="offcanvasUserStatus">Not logged in</a>
+                {% endif %}
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'dj_tasks:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Django</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Heroku</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% if messages %}
+    <div>
+      <strong>{% trans "Messages:" %}</strong>
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+    {% endblock body %}
+
+    <footer id="footer">
+        <small>Copyright <i class="fa-regular fa-copyright"></i> 2024 Django To Do</small>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/6e7a88330f.js" crossorigin="anonymous"></script>
+
+    {% block extra_body %}
+    {% endblock extra_body %}
+  </body>
+</html>
