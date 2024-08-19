@@ -2,19 +2,43 @@
 
 {% block content %}
     <div class="container mt-4">
+        <!-- Page Header with Checklist Template Name and Description -->
         <h1>{{ checklist_template.name }}</h1>
         <p>{{ checklist_template.description }}</p>
+
+        <!-- Section for displaying checklist steps -->
         <h2>Steps</h2>
         <ul>
+            <!-- Loop through all steps related with the checklist template -->
             {% for step in steps %}
                 <li>
-                    <h5>{{ step.step_int }}</h5>
-                    <p>{{ step.description }}</p>
-                    <p>{{step.code}}
-                </li>
-                {% empty %}
-                <li>No steps available.</li>
-            {% endfor %}
+                    <div class="d-flex justify-content-between align-items-center">
+                    <!-- Step details and code toggle button -->
+                    <div>
+                        <h5>{{ step.step_int }}</h5>
+                        <p>{{ step.description }}</p>
+                    <!-- Button to toggle the step's code -->
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#codeCollapse{{ step.id }}" aria-expanded="false" aria-controls="codeCollapse{{ step.id }}">
+                        Code
+                    </button>
+                    <!-- Collapsible section for displaying the step's code -->
+                    <div class="collapse" id="codeCollapse{{ step.id }}">
+                        <pre>{{ step.code }}</pre>
+                    </div>
+                </div>
+                
+                <!-- Checkbox to indicate if the step is completed -->
+                <div>
+                    <input type="checkbox" class="form-check-input" id="completedCheckbox{{ step.id }}" {% if user_checklist_step_completed %}checked{% endif %}>
+                    <label class="form-check-label" for="completedCheckbox{{ step.id }}">Completed</label>
+                </div>
+            </div>
+        </li>
+    {% empty %}
+        <!-- Message displayed when there are no steps available -->
+        <li class="list-group-item">No steps available.</li>
+    {% endfor %}
         </ul>
+    </div>
 
 {% endblock %}
