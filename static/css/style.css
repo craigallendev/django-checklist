@@ -1,7 +1,3 @@
-h1 {
-    color: red;
-}
-
 /* Body */
 body {
     display: grid;
@@ -12,6 +8,10 @@ body {
 /* Nav Bar */
 .nav-link-right {
     text-align: right;
+}
+
+.vr {
+    --bs-border-width: 1.5px;
 }
 
 /* Footer */
