@@ -10,14 +10,8 @@ body {
 }
 
 /* Nav Bar */
-
-#user-status {
-    color: white;
-    padding: 2px 10px;
-    border-radius: 20px;
-    margin-bottom: auto;
-    margin-left: 10px;
-    background-color: grey;
+.nav-link-right {
+    text-align: right;
 }
 
 /* Footer */
@@ -34,5 +28,11 @@ body {
     }
     #logo {
         order: 2;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #logo {
+        flex-grow: 1;
     }
 }
