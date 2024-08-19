@@ -60,7 +60,7 @@
                         aria-controls="offcanvasRight"><i class="fa-solid fa-user-graduate"></i> Not logged in</a>
                 {% endif %}
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+            <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
                 aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -69,12 +69,12 @@
                     <li class="nav-item">
                         <a class="nav-link nav-link-right active" aria-current="page" href="{% url 'dj_tasks:home' %}">Home</a>
                     </li>
+                    {% for checklist_template in navbar_checklist_templates %}
+                    <div class="vr"></div>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-right" href="#">Django</a>
+                        <a class="nav-link nav-link-right" href="{% url 'dj_tasks:checklist_template_detail' checklist_template.pk %}">{{ checklist_template.name }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-link-right" href="#">Heroku</a>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
