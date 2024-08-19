@@ -36,7 +36,12 @@ The goal behind Django Checklist is to create an easy and intuitive method of bo
 ## Wireframes
 Balsamiq was used to create the wireframes with the base layout showing the initial design ideas that would allow our project to display the required information. 
 
-<insert wireframe links here>
+![Landing Page](https://photos.google.com/photo/AF1QipMvVmgZxnUOZJjLEkQIVEcGU06cqamIHT9JGRWh)
+![About Page](https://photos.google.com/photo/AF1QipMvVmgZxnUOZJjLEkQIVEcGU06cqamIHT9JGRWh)
+![List Page](https://photos.google.com/photo/AF1QipO_5VV1H1V4Kb7WsAI6W3h17aiOjiKBgrvMbffs)
+![Personal Checklist Page](https://photos.google.com/photo/AF1QipO02uTLvNUXKKQKmLEp8K-RGv3QOXJt1SW6mEGO)
+![Mobile Pages](https://photos.google.com/photo/AF1QipOxHQOElJk24sW9dmU8QJCFlYXwCNXqKLnnJOi1)
+
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -44,9 +49,8 @@ Balsamiq was used to create the wireframes with the base layout showing the init
 
 Agile methodologies were used to plan and prioritise tasks according to MoSCoW and to aid with the assigning of tasks.
 
-
 ## Kanban Board Overview
-[Project Board](https://github.com/users/craigallendev/projects/5/views/1)
+As per [Kanban Board](https://github.com/users/craigallendev/projects/5/views/1)
 Tasks that had a relationship were linked to heighten task tracking visualisation.
 
 - **No Status:** This section contained all the tasks prior to being assigned to the workflow.
@@ -65,13 +69,16 @@ The Kanban board has been used to both track user stories and to ensure that the
 
 ## User Stories Overview
 
-As a **role** I can **capability** so that **received benefit**
+### {EPIC} Setup Django to a standard
+As a  **registered user**  I can  **follow a checklist**  so that **all Django Instances are to a defined standard **
 
-- Acceptance criteria 1:
-
-- Acceptance criteria 2:
-
-- Acceptance criteria 3:
+-   **Acceptance criteria 1:**  Create signup ability:  [User Registration & Authentication #2](https://github.com/craigallendev/django-checklist/issues/2)  [User Login #3](https://github.com/craigallendev/django-checklist/issues/3)
+    
+-   **Acceptance criteria 2:**  Create Django Setup Checklist:  [View Essential Steps #6](https://github.com/craigallendev/django-checklist/issues/6)
+    
+-   **Acceptance criteria 3:**  Allow progress monitoring through checklist:  [Progress Tracker #9](https://github.com/craigallendev/django-checklist/issues/9)  [Mark Checklist Items Completed #5](https://github.com/craigallendev/django-checklist/issues/5)
+    
+-   **Acceptance criteria 4:**  Allow notes to be added to steps  [Create own notes #8](https://github.com/craigallendev/django-checklist/issues/8)  [Add a Custom Step #11](https://github.com/craigallendev/django-checklist/issues/11)  [Delete a Custom Step #12](https://github.com/craigallendev/django-checklist/issues/12)
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -124,5 +131,5 @@ As a **role** I can **capability** so that **received benefit**
 ##### [ Back to Top ](#table-of-contents)
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczMTc3NjkzMF19
+eyJoaXN0b3J5IjpbLTE4NjMyNzg2MDgsMTczMTc3NjkzMF19
 -->
